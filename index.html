@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Article preview component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500&display=swap');
+    body{font-family: 'Manrope',sans-serif;font-size: 13px;background-color: hsl(210, 46%, 95%);}
+    .container{width:50%;margin-left: 25%;margin-right: 25%;margin-top: 15%;margin-bottom: 10%;display: flex;flex-direction: row;background-color: white;border: 1px solid hsl(210, 46%, 95%);border-radius: 10px;}
+    .image{width:50%;}
+    .text{width: 50%;}
+    h1{font-size: 18px;font-weight: 700;color: hsl(217, 19%, 35%);}
+    p{font-size: 13px;font-weight: 500;color: hsl(212, 23%, 69%);}
+    .share{display: flex;flex-direction: row;width: 100%;margin-top: 10%;}
+    .profile img{height: 30px;width: 30px;border: 1px solid white;border-radius: 50%;}
+    #icon{margin-left:50%;margin-top: 5%;background-color: hsl(210, 46%, 95%);height: 40px;border-radius: 50%;width:40px;}
+    .iconimg{padding-left: 25%;padding-top: 25%;}
+    .share p{color: hsl(217, 19%, 35%);}
+    .share .date{color: hsl(212, 23%, 69%);padding-left: 50px;}
+    .image img{width: 95%;height: 100%;border:1px solid hsl(210, 46%, 95%);border-top-left-radius: 10px;border-bottom-left-radius: 10px;}
+    #icons{background-color: hsl(217, 19%, 35%);display: flex;flex-direction: row;position: absolute;height: 30px;width: 15%;border: 1px solid white;border-radius: 10px;margin-left: 20%;top: 55%;justify-content: center;display:none;}
+    #icons img{width: 20px;height: 20px;margin-left: 10%;margin-top: 2%;}
+    #icons p{color: white;margin-top: 2%;}
+    @media screen and (max-width:600px) {
+      .container{display: flex;flex-direction: column;width: 80%;margin-left: 10%;margin-right: 10%;margin-top: 10%;}
+      .image{width: 100%;}
+      .text{width: 100%;}
+      .share{display: flex;flex-direction:row;}
+      .image img{width: 100%;border: 1px solid white;border-bottom: 0ch;border-top-left-radius: 10px;border-top-right-radius: 10px;border-bottom-left-radius: 0%;}
+      #icons{top: 110%;right: 10%;width: 80%;}
+
+      
+    }
+    
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+  <div class='container'>
+    <div class='image'>
+      <img src="./images/drawers.jpg" alt="drawers image">
+      
+    </div>
+    <div class='text'>
+      <h1>Shift the overall look and feel by <br>adding these wonderful touches to <br> furniture in your home</h1>
+      <p>Ever been in a room and felt like something was missing? <br>Perhaps,it felt slighlty bare and uninviting.I've got some <br>simple tips to help you make any room complete.</p>
+      <div class='share'> 
+        <p><span class='profile'><img src="./images/avatar-michelle.jpg" alt="michelle's image"></span> Michelle Appleton <br><span class='date'>28 Jun 2020</span></p>
+        <span id='icon'><img onmouseover="onhover()" onmouseout="off()" class='iconimg' src="./images/icon-share.svg" alt="Share icon"></span>
+        <div id='icons'>
+          <p>SHARE</p>
+          <img src="./images/icon-facebook.svg" alt="fb icon">
+          <img src="./images/icon-twitter.svg" alt="twitter icon">
+          <img src="./images/icon-pinterest.svg" alt="pinterest icon">
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Rahul Solanki</a>.
+  </div>
+</body>
+<script>
+  var icons=document.getElementById('icons')
+  var share=document.getElementById('icon')
+  function onhover(){
+    icons.style.display="flex";
+    share.style.backgroundColor="hsl(217,19%,35%)"
+  }
+  function off(){
+    icons.style.display="none";
+    share.style.backgroundColor="hsl(210,46%,95%)"
+  }
+</script>
+</html>
